@@ -8,9 +8,10 @@ object ConfigManager {
   try{
     val jdbcConnect = ConfigManager.getClass.getClassLoader.getResourceAsStream("basic.properties")
     val dwd_dm = ConfigManager.getClass.getClassLoader.getResourceAsStream("dwd_dm.properties")
-
+    val user_visit = ConfigManager.getClass.getClassLoader.getResourceAsStream("dm_user_visit.properties")
     prop.load(jdbcConnect)
     prop.load(dwd_dm)
+    prop.load(user_visit)
   }catch {
     case e:Exception =>e.printStackTrace()
   }
